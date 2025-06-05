@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -12,9 +11,9 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-6">
               <img 
-                src="https://images.unsplash.com/photo-1562774053-701939374585?w=60&h=60&fit=crop&crop=center" 
+                src="/lovable-uploads/6091f9a4-f7b1-4b7d-a7d1-a9fa681b464b.png" 
                 alt="GBU Logo" 
-                className="h-12 w-12 rounded-full mr-3"
+                className="h-12 w-auto mr-3"
               />
               <div>
                 <h3 className="text-lg font-bold">Gautam Buddha University</h3>
