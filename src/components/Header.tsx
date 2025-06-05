@@ -2,10 +2,107 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Search } from 'lucide-react';
+import { 
+  Search, 
+  GraduationCap, 
+  FileSignature, 
+  Microscope, 
+  University, 
+  Briefcase, 
+  Users, 
+  Phone, 
+  UserGraduate, 
+  CreditCard, 
+  Info,
+  Camera,
+  Bullhorn
+} from 'lucide-react';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
+import { cn } from '@/lib/utils';
 
 const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  const aboutUsItems = [
+    { title: "Vision & Mission", href: "#" },
+    { title: "Chancellor's Message", href: "#" },
+    { title: "Vice-Chancellor's Message", href: "#" },
+    { title: "Governance & Committees", href: "#" },
+    { title: "GBU Strategic Perspective", href: "#" },
+    { title: "Policies, Statutes & RTI", href: "#" },
+    { title: "Mandatory Disclosures", href: "#" },
+    { title: "Media Coverage", href: "#" },
+  ];
+
+  const academicsItems = [
+    { title: "Academic Calendar & Regulations", href: "#" },
+    { title: "News, Events and Gallery", href: "#" },
+    { title: "CBCS Curriculum Framework", href: "#" },
+    { title: "Schools & Departments", href: "#" },
+    { title: "Faculty Directory", href: "#" },
+    { title: "Centers of Excellence", href: "#" },
+    { title: "International Collaboration", href: "#" },
+    { title: "Reports & Publications", href: "#" },
+  ];
+
+  const admissionsItems = [
+    { title: "Admission Process", href: "#" },
+    { title: "Courses Offered (UG | PG | PhD)", href: "#" },
+    { title: "Eligibility & Reservation", href: "#" },
+    { title: "Fee Structure & Prospectus", href: "#" },
+    { title: "International Admissions", href: "#" },
+  ];
+
+  const researchItems = [
+    { title: "Research Highlights & Achievements", href: "#" },
+    { title: "Research Centers & Labs", href: "#" },
+    { title: "Publications & Patents", href: "#" },
+    { title: "Innovation & Incubation", href: "#" },
+    { title: "StartUP", href: "#" },
+    { title: "Funded Projects", href: "#" },
+    { title: "IPR Cell", href: "#" },
+  ];
+
+  const campusLifeItems = [
+    { title: "Virtual Tour", href: "#" },
+    { title: "Student Clubs & Councils", href: "#" },
+    { title: "NSS and NCC", href: "#" },
+    { title: "Hostel, Mess, and Dining", href: "#" },
+    { title: "Sports & Cultural Activities", href: "#" },
+    { title: "Meditation Center", href: "#" },
+    { title: "Health & Wellness", href: "#" },
+  ];
+
+  const announcementsItems = [
+    { title: "News & Notifications", href: "#" },
+    { title: "Events Calendar", href: "#" },
+    { title: "Photo Gallery", href: "#" },
+    { title: "Media Coverage", href: "#" },
+    { title: "Student Achievements", href: "#" },
+    { title: "Faculty & Research Highlights", href: "#" },
+  ];
+
+  const placementsItems = [
+    { title: "Placement Brochure", href: "#" },
+    { title: "Campus Recruiters", href: "#" },
+    { title: "Placement Statistics", href: "#" },
+    { title: "Internship Programmes", href: "#" },
+    { title: "Training & Career Services", href: "#" },
+  ];
+
+  const alumniItems = [
+    { title: "Alumni Network", href: "#" },
+    { title: "Registration & Directory", href: "#" },
+    { title: "Alumni Talks", href: "#" },
+    { title: "Events & Reunions", href: "#" },
+  ];
 
   return (
     <header className="w-full">
@@ -14,18 +111,36 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center text-sm">
             <div className="flex space-x-6">
-              <a href="#" className="hover:text-gbu-light-orange transition-colors">Tenders</a>
-              <a href="#" className="hover:text-gbu-light-orange transition-colors">Recruitments</a>
+              <a href="#" className="hover:text-gbu-light-orange transition-colors flex items-center gap-1">
+                <Bullhorn className="h-3 w-3" />
+                Tenders
+              </a>
+              <a href="#" className="hover:text-gbu-light-orange transition-colors flex items-center gap-1">
+                <Bullhorn className="h-3 w-3" />
+                Recruitments
+              </a>
               <a href="#" className="hover:text-gbu-light-orange transition-colors">Booking</a>
-              <a href="#" className="hover:text-gbu-light-orange transition-colors">RTI</a>
+              <a href="#" className="hover:text-gbu-light-orange transition-colors flex items-center gap-1">
+                <Info className="h-3 w-3" />
+                RTI
+              </a>
               <a href="#" className="hover:text-gbu-light-orange transition-colors">Sitemap</a>
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="hover:text-gbu-light-orange transition-colors">Online Fee Payment</a>
-              <a href="#" className="hover:text-gbu-light-orange transition-colors">Student Portal</a>
+              <a href="#" className="hover:text-gbu-light-orange transition-colors flex items-center gap-1">
+                <CreditCard className="h-3 w-3" />
+                Online Fee Payment
+              </a>
+              <a href="#" className="hover:text-gbu-light-orange transition-colors flex items-center gap-1">
+                <UserGraduate className="h-3 w-3" />
+                Student Portal
+              </a>
               <a href="#" className="hover:text-gbu-light-orange transition-colors">Employee Login</a>
               <a href="#" className="hover:text-gbu-light-orange transition-colors">Directory</a>
-              <a href="#" className="hover:text-gbu-light-orange transition-colors">Contact Us</a>
+              <a href="#" className="hover:text-gbu-light-orange transition-colors flex items-center gap-1">
+                <Phone className="h-3 w-3" />
+                Contact Us
+              </a>
             </div>
           </div>
         </div>
@@ -49,16 +164,209 @@ const Header = () => {
             </div>
 
             {/* Navigation Menu */}
-            <nav className="hidden lg:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">About Us</a>
-              <a href="#" className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">Academics</a>
-              <a href="#" className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">Admissions</a>
-              <a href="#" className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">Research</a>
-              <a href="#" className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">Campus Life</a>
-              <a href="#" className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">Announcements</a>
-              <a href="#" className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">Placements</a>
-              <a href="#" className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">Alumni</a>
-            </nav>
+            <NavigationMenu className="hidden lg:flex">
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                    <Users className="h-4 w-4 mr-1" />
+                    About Us
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                      {aboutUsItems.map((item) => (
+                        <li key={item.title}>
+                          <NavigationMenuLink asChild>
+                            <a
+                              className={cn(
+                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              )}
+                              href={item.href}
+                            >
+                              <div className="text-sm font-medium leading-none">{item.title}</div>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                    <GraduationCap className="h-4 w-4 mr-1" />
+                    Academics
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                      {academicsItems.map((item) => (
+                        <li key={item.title}>
+                          <NavigationMenuLink asChild>
+                            <a
+                              className={cn(
+                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              )}
+                              href={item.href}
+                            >
+                              <div className="text-sm font-medium leading-none">{item.title}</div>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                    <FileSignature className="h-4 w-4 mr-1" />
+                    Admissions
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                      {admissionsItems.map((item) => (
+                        <li key={item.title}>
+                          <NavigationMenuLink asChild>
+                            <a
+                              className={cn(
+                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              )}
+                              href={item.href}
+                            >
+                              <div className="text-sm font-medium leading-none">{item.title}</div>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                    <Microscope className="h-4 w-4 mr-1" />
+                    Research
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                      {researchItems.map((item) => (
+                        <li key={item.title}>
+                          <NavigationMenuLink asChild>
+                            <a
+                              className={cn(
+                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              )}
+                              href={item.href}
+                            >
+                              <div className="text-sm font-medium leading-none">{item.title}</div>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                    <University className="h-4 w-4 mr-1" />
+                    Campus Life
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                      {campusLifeItems.map((item) => (
+                        <li key={item.title}>
+                          <NavigationMenuLink asChild>
+                            <a
+                              className={cn(
+                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              )}
+                              href={item.href}
+                            >
+                              <div className="text-sm font-medium leading-none">{item.title}</div>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                    <Camera className="h-4 w-4 mr-1" />
+                    Announcements
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                      {announcementsItems.map((item) => (
+                        <li key={item.title}>
+                          <NavigationMenuLink asChild>
+                            <a
+                              className={cn(
+                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              )}
+                              href={item.href}
+                            >
+                              <div className="text-sm font-medium leading-none">{item.title}</div>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                    <Briefcase className="h-4 w-4 mr-1" />
+                    Placements
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                      {placementsItems.map((item) => (
+                        <li key={item.title}>
+                          <NavigationMenuLink asChild>
+                            <a
+                              className={cn(
+                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              )}
+                              href={item.href}
+                            >
+                              <div className="text-sm font-medium leading-none">{item.title}</div>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                    <Users className="h-4 w-4 mr-1" />
+                    Alumni
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                      {alumniItems.map((item) => (
+                        <li key={item.title}>
+                          <NavigationMenuLink asChild>
+                            <a
+                              className={cn(
+                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                              )}
+                              href={item.href}
+                            >
+                              <div className="text-sm font-medium leading-none">{item.title}</div>
+                            </a>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
 
             {/* Search */}
             <div className="flex items-center">
