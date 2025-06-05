@@ -222,7 +222,7 @@ const Header = () => {
             <div className="flex items-center">
               <img alt="GBU Logo" className="h-12 w-12 mr-3" src="/lovable-uploads/5ae0d9ed-e0e0-4921-a0f1-8e17676824d6.png" />
               <div>
-                <h1 className="text-xl font-bold gradient-text">Gautam Buddha University</h1>
+                
                 <p className="text-xs text-gray-600">Greater Noida, Uttar Pradesh</p>
               </div>
             </div>
