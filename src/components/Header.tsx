@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -14,7 +15,8 @@ import {
   CreditCard, 
   Info,
   Camera,
-  Megaphone
+  Megaphone,
+  ChevronRight
 } from 'lucide-react';
 import {
   NavigationMenu,
@@ -24,6 +26,16 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { cn } from '@/lib/utils';
 
 const Header = () => {
@@ -44,12 +56,62 @@ const Header = () => {
     { title: "Academic Calendar & Regulations", href: "#" },
     { title: "News, Events and Gallery", href: "#" },
     { title: "CBCS Curriculum Framework", href: "#" },
-    { title: "Schools & Departments", href: "#" },
     { title: "Faculty Directory", href: "#" },
     { title: "Centers of Excellence", href: "#" },
     { title: "International Collaboration", href: "#" },
     { title: "Reports & Publications", href: "#" },
   ];
+
+  const schoolsAndDepartments = {
+    "School of Engineering & Technology": [
+      "Computer Science & Engineering",
+      "Artificial Intelligence",
+      "Electronics & Communication",
+      "Mechanical Engineering",
+      "Civil Engineering"
+    ],
+    "School of Management": [
+      "MBA Programs",
+      "Executive Programs",
+      "Research Programs"
+    ],
+    "School of Law": [
+      "LLB Programs",
+      "LLM Programs",
+      "Legal Research"
+    ],
+    "School of Applied Sciences": [
+      "Physics",
+      "Chemistry",
+      "Mathematics",
+      "Statistics"
+    ],
+    "School of Languages": [
+      "English Studies",
+      "Hindi Studies",
+      "Foreign Languages"
+    ],
+    "School of Humanities & Social Sciences": [
+      "Psychology",
+      "Political Science",
+      "Sociology"
+    ],
+    "School of Education": [
+      "B.Ed Programs",
+      "M.Ed Programs",
+      "Teacher Training"
+    ],
+    "School of Buddhist Studies & Civilization": [
+      "Buddhist Philosophy",
+      "Buddhist Literature",
+      "Cultural Studies"
+    ],
+    "School of Biotechnology": [
+      "Biotechnology Programs",
+      "Bioinformatics",
+      "Research Programs"
+    ]
+  };
 
   const admissionsItems = [
     { title: "Admission Process", href: "#" },
@@ -148,36 +210,36 @@ const Header = () => {
       {/* Primary Navbar */}
       <div className="bg-white shadow-lg">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between py-4">
+          <div className="flex items-center justify-between py-3">
             {/* Logo */}
             <div className="flex items-center">
               <img 
-                src="https://images.unsplash.com/photo-1562774053-701939374585?w=80&h=80&fit=crop&crop=center" 
+                src="/lovable-uploads/98f23ee0-e3c1-4e65-b5e4-11b6b1a78c82.png" 
                 alt="GBU Logo" 
-                className="h-16 w-16 rounded-full mr-3"
+                className="h-12 w-12 mr-3"
               />
               <div>
-                <h1 className="text-2xl font-bold gradient-text">Gautam Buddha University</h1>
-                <p className="text-sm text-gray-600">Greater Noida, Uttar Pradesh</p>
+                <h1 className="text-xl font-bold gradient-text">Gautam Buddha University</h1>
+                <p className="text-xs text-gray-600">Greater Noida, Uttar Pradesh</p>
               </div>
             </div>
 
             {/* Navigation Menu */}
             <NavigationMenu className="hidden lg:flex">
-              <NavigationMenuList>
+              <NavigationMenuList className="space-x-1">
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors text-sm">
                     <Users className="h-4 w-4 mr-1" />
                     About Us
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                    <ul className="grid w-[300px] gap-2 p-4 bg-white">
                       {aboutUsItems.map((item) => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
                             <a
                               className={cn(
-                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                "block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                               )}
                               href={item.href}
                             >
@@ -191,43 +253,56 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
-                    <GraduationCap className="h-4 w-4 mr-1" />
-                    Academics
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                  <DropdownMenu>
+                    <DropdownMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors text-sm flex items-center">
+                      <GraduationCap className="h-4 w-4 mr-1" />
+                      Academics
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="w-[300px] bg-white">
                       {academicsItems.map((item) => (
-                        <li key={item.title}>
-                          <NavigationMenuLink asChild>
-                            <a
-                              className={cn(
-                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                              )}
-                              href={item.href}
-                            >
-                              <div className="text-sm font-medium leading-none">{item.title}</div>
-                            </a>
-                          </NavigationMenuLink>
-                        </li>
+                        <DropdownMenuItem key={item.title}>
+                          <a href={item.href} className="w-full">{item.title}</a>
+                        </DropdownMenuItem>
                       ))}
-                    </ul>
-                  </NavigationMenuContent>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuSub>
+                        <DropdownMenuSubTrigger>
+                          <span>Schools & Departments</span>
+                        </DropdownMenuSubTrigger>
+                        <DropdownMenuSubContent className="w-[300px] bg-white">
+                          {Object.entries(schoolsAndDepartments).map(([school, departments]) => (
+                            <DropdownMenuSub key={school}>
+                              <DropdownMenuSubTrigger>
+                                <span className="text-sm">{school}</span>
+                              </DropdownMenuSubTrigger>
+                              <DropdownMenuSubContent className="w-[250px] bg-white">
+                                {departments.map((dept) => (
+                                  <DropdownMenuItem key={dept}>
+                                    <a href="#" className="w-full text-sm">{dept}</a>
+                                  </DropdownMenuItem>
+                                ))}
+                              </DropdownMenuSubContent>
+                            </DropdownMenuSub>
+                          ))}
+                        </DropdownMenuSubContent>
+                      </DropdownMenuSub>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors text-sm">
                     <FileSignature className="h-4 w-4 mr-1" />
                     Admissions
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                    <ul className="grid w-[300px] gap-2 p-4 bg-white">
                       {admissionsItems.map((item) => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
                             <a
                               className={cn(
-                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                "block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                               )}
                               href={item.href}
                             >
@@ -241,18 +316,18 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors text-sm">
                     <Microscope className="h-4 w-4 mr-1" />
                     Research
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                    <ul className="grid w-[300px] gap-2 p-4 bg-white">
                       {researchItems.map((item) => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
                             <a
                               className={cn(
-                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                "block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                               )}
                               href={item.href}
                             >
@@ -266,18 +341,18 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors text-sm">
                     <University className="h-4 w-4 mr-1" />
                     Campus Life
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                    <ul className="grid w-[300px] gap-2 p-4 bg-white">
                       {campusLifeItems.map((item) => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
                             <a
                               className={cn(
-                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                "block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                               )}
                               href={item.href}
                             >
@@ -291,18 +366,18 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors text-sm">
                     <Camera className="h-4 w-4 mr-1" />
                     Announcements
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                    <ul className="grid w-[300px] gap-2 p-4 bg-white">
                       {announcementsItems.map((item) => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
                             <a
                               className={cn(
-                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                "block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                               )}
                               href={item.href}
                             >
@@ -316,18 +391,18 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors text-sm">
                     <Briefcase className="h-4 w-4 mr-1" />
                     Placements
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                    <ul className="grid w-[300px] gap-2 p-4 bg-white">
                       {placementsItems.map((item) => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
                             <a
                               className={cn(
-                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                "block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                               )}
                               href={item.href}
                             >
@@ -341,18 +416,18 @@ const Header = () => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors">
+                  <NavigationMenuTrigger className="text-gray-700 hover:text-gbu-blue font-medium transition-colors text-sm">
                     <Users className="h-4 w-4 mr-1" />
                     Alumni
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                    <ul className="grid w-[300px] gap-2 p-4 bg-white">
                       {alumniItems.map((item) => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
                             <a
                               className={cn(
-                                "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                "block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                               )}
                               href={item.href}
                             >

@@ -1,36 +1,37 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { GraduationCap, CreditCard, Briefcase, University, Building } from 'lucide-react';
 
 const QuickAccess = () => {
   const quickAccessItems = [
     {
       title: "Schools",
-      icon: "🏫",
+      icon: <GraduationCap className="h-8 w-8" />,
       description: "Explore our academic schools",
       color: "bg-gbu-green"
     },
     {
       title: "Fees",
-      icon: "💳",
+      icon: <CreditCard className="h-8 w-8" />,
       description: "Fee structure and payment",
       color: "bg-gbu-blue"
     },
     {
       title: "Placements",
-      icon: "🎯",
+      icon: <Briefcase className="h-8 w-8" />,
       description: "Career opportunities",
       color: "bg-gbu-orange"
     },
     {
       title: "Courses Offered",
-      icon: "📚",
+      icon: <University className="h-8 w-8" />,
       description: "Academic programs",
       color: "bg-gbu-green"
     },
     {
       title: "Infrastructure",
-      icon: "🏗️",
+      icon: <Building className="h-8 w-8" />,
       description: "Campus facilities",
       color: "bg-gbu-blue"
     }
@@ -47,7 +48,7 @@ const QuickAccess = () => {
               className="group hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-2"
             >
               <CardContent className="p-6 text-center">
-                <div className={`${item.color} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl text-white group-hover:scale-110 transition-transform`}>
+                <div className={`${item.color} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white group-hover:scale-110 transition-transform`}>
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-semibold mb-2 text-gray-800">{item.title}</h3>
