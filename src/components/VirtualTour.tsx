@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,27 +9,18 @@ const VirtualTour = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 gradient-text">GBU in 360°</h2>
         
-        <Card className="max-w-4xl mx-auto overflow-hidden shadow-2xl">
+        <Card className="max-w-4xl mx-auto overflow-hidden">
           <CardContent className="p-0 relative">
-            <div 
-              className="aspect-video bg-cover bg-center bg-no-repeat relative overflow-hidden"
-              style={{
-                backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop&crop=center')`
-              }}
-            >
-              <div className="absolute inset-0 flex items-center justify-center text-center text-white p-8">
-                <div>
-                  <h3 className="text-3xl font-bold mb-4 drop-shadow-lg">Virtual Campus Tour</h3>
-                  <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto drop-shadow">
-                    Experience our beautiful campus from anywhere in the world. Take an immersive journey through our state-of-the-art facilities and stunning architecture.
-                  </p>
-                  <Button 
-                    className="bg-white text-gbu-blue hover:bg-gray-100 font-semibold px-8 py-3 text-lg shadow-lg transform hover:scale-105 transition-all duration-300"
-                    size="lg"
-                  >
-                    🎥 Start Virtual Tour
-                  </Button>
-                </div>
+            <div className="aspect-video bg-gradient-to-br from-gbu-green to-gbu-blue flex items-center justify-center">
+              <div className="text-center text-white">
+                <h3 className="text-2xl font-bold mb-4">Virtual Campus Tour</h3>
+                <p className="text-lg mb-6 opacity-90">Experience our beautiful campus from anywhere in the world</p>
+                <Button 
+                  className="bg-white text-gbu-blue hover:bg-gray-100 font-semibold px-8 py-3"
+                  size="lg"
+                >
+                  Start Virtual Tour
+                </Button>
               </div>
             </div>
           </CardContent>
