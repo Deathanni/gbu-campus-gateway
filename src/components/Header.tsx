@@ -220,7 +220,7 @@ const Header = () => {
           <div className="flex items-center justify-between py-3">
             {/* Logo */}
             <div className="flex items-center">
-              <img alt="GBU Logo" className="h-12 w-12 mr-3" src="/lovable-uploads/5ae0d9ed-e0e0-4921-a0f1-8e17676824d6.png" />
+              <img alt="GBU Logo" src="/lovable-uploads/5ae0d9ed-e0e0-4921-a0f1-8e17676824d6.png" className="h-12 w-25 mr-3" />
               <div>
                 
                 
