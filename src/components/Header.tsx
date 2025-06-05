@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,11 +10,11 @@ import {
   Briefcase, 
   Users, 
   Phone, 
-  UserGraduate, 
+  User, 
   CreditCard, 
   Info,
   Camera,
-  Bullhorn
+  Megaphone
 } from 'lucide-react';
 import {
   NavigationMenu,
@@ -112,11 +111,11 @@ const Header = () => {
           <div className="flex justify-between items-center text-sm">
             <div className="flex space-x-6">
               <a href="#" className="hover:text-gbu-light-orange transition-colors flex items-center gap-1">
-                <Bullhorn className="h-3 w-3" />
+                <Megaphone className="h-3 w-3" />
                 Tenders
               </a>
               <a href="#" className="hover:text-gbu-light-orange transition-colors flex items-center gap-1">
-                <Bullhorn className="h-3 w-3" />
+                <Megaphone className="h-3 w-3" />
                 Recruitments
               </a>
               <a href="#" className="hover:text-gbu-light-orange transition-colors">Booking</a>
@@ -132,7 +131,7 @@ const Header = () => {
                 Online Fee Payment
               </a>
               <a href="#" className="hover:text-gbu-light-orange transition-colors flex items-center gap-1">
-                <UserGraduate className="h-3 w-3" />
+                <User className="h-3 w-3" />
                 Student Portal
               </a>
               <a href="#" className="hover:text-gbu-light-orange transition-colors">Employee Login</a>
