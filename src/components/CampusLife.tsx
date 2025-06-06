@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -62,27 +61,6 @@ const CampusLife = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gbu-green mb-2">50+</div>
-              <div className="text-gray-600">Student Clubs</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gbu-blue mb-2">15+</div>
-              <div className="text-gray-600">Sports Facilities</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gbu-orange mb-2">100+</div>
-              <div className="text-gray-600">Cultural Events</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gbu-green mb-2">24/7</div>
-              <div className="text-gray-600">Campus Security</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

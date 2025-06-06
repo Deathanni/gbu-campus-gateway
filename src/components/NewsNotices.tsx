@@ -1,7 +1,4 @@
-
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 
 const NewsNotices = () => {
   const newsItems = [
@@ -19,6 +16,11 @@ const NewsNotices = () => {
       title: "International Conference on Technology",
       date: "March 5, 2024",
       excerpt: "Leading experts gather to discuss emerging technologies..."
+    },
+    {
+      title: "New Student Exchange Program",
+      date: "March 2, 2024",
+      excerpt: "MoU signed with foreign universities for student mobility..."
     }
   ];
 
@@ -37,13 +39,18 @@ const NewsNotices = () => {
       title: "Holiday Notice",
       date: "March 15, 2024",
       excerpt: "University will remain closed on account of Holi festival..."
+    },
+    {
+      title: "Fee Payment Deadline",
+      date: "March 12, 2024",
+      excerpt: "Last date for fee submission extended till March 20..."
     }
   ];
 
   const events = [
     {
       title: "Annual Cultural Fest",
-      date: "April 5-7, 2024",
+      date: "April 5–7, 2024",
       excerpt: "Three-day cultural extravaganza featuring music, dance, and drama..."
     },
     {
@@ -55,40 +62,71 @@ const NewsNotices = () => {
       title: "Career Fair",
       date: "April 20, 2024",
       excerpt: "Leading companies participate in campus recruitment drive..."
+    },
+    {
+      title: "Research Paper Workshop",
+      date: "April 25, 2024",
+      excerpt: "Hands-on session for academic writing and publishing..."
     }
   ];
 
   const sections = [
-    { title: "News", items: newsItems, color: "border-gbu-green" },
-    { title: "Notices", items: notices, color: "border-gbu-blue" },
-    { title: "Academic Events", items: events, color: "border-gbu-orange" }
+    {
+      title: "Latest News",
+      items: newsItems,
+      gradient: "bg-gradient-to-r from-blue-700 to-green-500"
+    },
+    {
+      title: "Notices",
+      items: notices,
+      gradient: "bg-gradient-to-r from-orange-500 to-red-500"
+    },
+    {
+      title: "Academic Events",
+      items: events,
+      gradient: "bg-gradient-to-r from-green-600 to-blue-700"
+    }
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 gradient-text">Latest Updates</h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {sections.map((section, sectionIndex) => (
-            <Card key={sectionIndex} className={`border-t-4 ${section.color} hover:shadow-lg transition-shadow`}>
-              <CardHeader className="pb-4">
-                <CardTitle className="text-xl font-bold text-gray-800">{section.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {section.items.map((item, itemIndex) => (
-                  <div key={itemIndex} className="border-b border-gray-100 pb-4 last:border-b-0">
-                    <h4 className="font-semibold text-gray-800 mb-1 hover:text-gbu-blue cursor-pointer transition-colors">
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">Latest Updates</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sections.map((section, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-md flex flex-col overflow-hidden"
+              style={{ height: '420px' }}
+            >
+              {/* Header */}
+              <div className={`${section.gradient} text-white text-lg font-semibold px-4 py-3`}>
+                {section.title}
+              </div>
+
+              {/* Scrollable Content Area */}
+              <div className="p-4 overflow-y-auto flex-1">
+                {section.items.map((item, i) => (
+                  <div key={i} className="mb-4 border-b pb-4 last:border-b-0 last:pb-0">
+                    <h4 className="font-semibold text-blue-700 hover:underline cursor-pointer">
                       {item.title}
                     </h4>
-                    <p className="text-sm text-gray-500 mb-2">{item.date}</p>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item.excerpt}</p>
+                    <p className="text-sm text-gray-500 mb-1">{item.date}</p>
+                    <p className="text-gray-700 text-sm">{item.excerpt}</p>
                   </div>
                 ))}
-                <Button variant="outline" className="w-full mt-4 border-gbu-blue text-gbu-blue hover:bg-gbu-blue hover:text-white">
-                  View All {section.title}
-                </Button>
-              </CardContent>
-            </Card>
+              </div>
+
+              {/* Footer Link */}
+              <div className="bg-gray-100 text-center py-3">
+                <a
+                  href="#"
+                  className="text-blue-700 font-medium hover:underline"
+                >
+                  View All {section.title.split(' ')[0]}
+                </a>
+              </div>
+            </div>
           ))}
         </div>
       </div>
