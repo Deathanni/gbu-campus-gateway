@@ -127,22 +127,22 @@ const Header = () => {
   }];
   const announcementsItems = [{
     title: "News & Notifications",
-    href: "#"
+    href: "https://campus-announcements.lovable.app/announcements/news-notifications"
   }, {
     title: "Events Calendar",
-    href: "#"
+    href: "https://campus-announcements.lovable.app/announcements/events-calendar"
   }, {
     title: "Photo Gallery",
-    href: "#"
+    href: "https://campus-announcements.lovable.app/announcements/photo-gallery"
   }, {
     title: "Media Coverage",
-    href: "#"
+    href: "https://campus-announcements.lovable.app/announcements/media-coverage"
   }, {
     title: "Student Achievements",
-    href: "#"
+    href: "https://campus-announcements.lovable.app/announcements/student-achievements"
   }, {
     title: "Faculty & Research Highlights",
-    href: "#"
+    href: "https://campus-announcements.lovable.app/announcements/faculty-research-highlights"
   }];
   const placementsItems = [{
     title: "Placement Brochure",
