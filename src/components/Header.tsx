@@ -9,50 +9,51 @@ const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const aboutUsItems = [{
     title: "Vision & Mission",
-    href: "#"
+    href: "https://gbu-about-us.vercel.app/about/vision-mission"
   }, {
     title: "Chancellor's Message",
-    href: "#"
+    href: "https://gbu-about-us.vercel.app/about/chancellor-message"
   }, {
     title: "Vice-Chancellor's Message",
-    href: "#"
+    href: "https://gbu-about-us.vercel.app/about/vc-message"
   }, {
     title: "Governance & Committees",
-    href: "#"
+    href: "https://gbu-about-us.vercel.app/about/governance"
   }, {
     title: "GBU Strategic Perspective",
-    href: "#"
+    href: "https://gbu-about-us.vercel.app/about/strategic-perspective"
   }, {
     title: "Policies, Statutes & RTI",
-    href: "#"
+    href: "https://gbu-about-us.vercel.app/about/policies"
   }, {
     title: "Mandatory Disclosures",
-    href: "#"
+    href: "https://gbu-about-us.vercel.app/about/disclosures"
   }, {
     title: "Media Coverage",
-    href: "#"
+    href: "https://gbu-about-us.vercel.app/about/disclosures"
   }];
   const academicsItems = [{
     title: "Academic Calendar & Regulations",
-    href: "#"
+    href: "https://buddha-university-portal.lovable.app/academics/calendar"
   }, {
     title: "News, Events and Gallery",
-    href: "#"
+    href: "https://buddha-university-portal.lovable.app/academics/news"
   }, {
+    
     title: "CBCS Curriculum Framework",
-    href: "#"
+    href: "https://buddha-university-portal.lovable.app/academics/cbcs"
   }, {
     title: "Faculty Directory",
-    href: "#"
+    href: "https://buddha-university-portal.lovable.app/academics/faculty"
   }, {
     title: "Centers of Excellence",
-    href: "#"
+    href: "https://buddha-university-portal.lovable.app/academics/centers"
   }, {
     title: "International Collaboration",
-    href: "#"
+    href: "https://buddha-university-portal.lovable.app/academics/collaboration"
   }, {
     title: "Reports & Publications",
-    href: "#"
+    href: "https://buddha-university-portal.lovable.app/academics/reports"
   }];
   const schoolsAndDepartments = {
     "School of Engineering & Technology": ["Computer Science & Engineering", "Artificial Intelligence", "Electronics & Communication", "Mechanical Engineering", "Civil Engineering"],
@@ -65,65 +66,64 @@ const Header = () => {
     "School of Buddhist Studies & Civilization": ["Buddhist Philosophy", "Buddhist Literature", "Cultural Studies"],
     "School of Biotechnology": ["Biotechnology Programs", "Bioinformatics", "Research Programs"]
   };
+  
+
   const admissionsItems = [{
     title: "Admission Process",
-    href: "#"
+    href: "https://admissionportal-07.lovable.app/admission-process"
   }, {
     title: "Courses Offered (UG | PG | PhD)",
-    href: "#"
+    href: "https://admissionportal-07.lovable.app/courses-offered"
   }, {
     title: "Eligibility & Reservation",
-    href: "#"
+    href: "https://admissionportal-07.lovable.app/eligibility-reservation"
   }, {
     title: "Fee Structure & Prospectus",
-    href: "#"
+    href: "https://admissionportal-07.lovable.app/fee-structure"
   }, {
     title: "International Admissions",
-    href: "#"
+    href: "https://admissionportal-07.lovable.app/international-admissions"
   }];
   const researchItems = [{
     title: "Research Highlights & Achievements",
-    href: "#"
+    href: "https://campus-research-nexus.lovable.app/research/highlights"
   }, {
     title: "Research Centers & Labs",
-    href: "#"
+    href: "https://campus-research-nexus.lovable.app/research/centers"
   }, {
     title: "Publications & Patents",
-    href: "#"
+    href: "https://campus-research-nexus.lovable.app/research/publications"
   }, {
     title: "Innovation & Incubation",
-    href: "#"
+    href: "https://campus-research-nexus.lovable.app/research/innovations"
   }, {
     title: "StartUP",
-    href: "#"
+    href: "https://campus-research-nexus.lovable.app/research/startup"
   }, {
-    title: "Funded Projects",
-    href: "#"
-  }, {
-    title: "IPR Cell",
-    href: "#"
+    title: "Funded Projects & IPR cell",
+    href: "https://campus-research-nexus.lovable.app/research/funded-projects"
   }];
   const campusLifeItems = [{
     title: "Virtual Tour",
-    href: "#"
+    href: "https://campus-oasis-portal.lovable.app/campus-life/virtual-tour"
   }, {
     title: "Student Clubs & Councils",
-    href: "#"
+    href: "https://campus-oasis-portal.lovable.app/campus-life/clubs-councils"
   }, {
     title: "NSS and NCC",
-    href: "#"
+    href: "https://campus-oasis-portal.lovable.app/campus-life/nss-ncc"
   }, {
     title: "Hostel, Mess, and Dining",
-    href: "#"
+    href: "https://campus-oasis-portal.lovable.app/campus-life/hostel-dining"
   }, {
     title: "Sports & Cultural Activities",
-    href: "#"
+    href: "http://campus-oasis-portal.lovable.app/campus-life/sports-cultural"
   }, {
     title: "Meditation Center",
-    href: "#"
+    href: "https://campus-oasis-portal.lovable.app/campus-life/meditation"
   }, {
     title: "Health & Wellness",
-    href: "#"
+    href: "https://campus-oasis-portal.lovable.app/campus-life/health-wellness"
   }];
   const announcementsItems = [{
     title: "News & Notifications",
@@ -146,32 +146,32 @@ const Header = () => {
   }];
   const placementsItems = [{
     title: "Placement Brochure",
-    href: "#"
+    href: "https://uni-placement-portal.lovable.app/placement-brochure"
   }, {
     title: "Campus Recruiters",
-    href: "#"
+    href: "https://uni-placement-portal.lovable.app/campus-recruiters"
   }, {
     title: "Placement Statistics",
-    href: "#"
+    href: "https://uni-placement-portal.lovable.app/placement-statistics"
   }, {
     title: "Internship Programmes",
-    href: "#"
+    href: "https://uni-placement-portal.lovable.app/internship-programmes"
   }, {
     title: "Training & Career Services",
-    href: "#"
+    href: "https://uni-placement-portal.lovable.app/training-career-services"
   }];
   const alumniItems = [{
     title: "Alumni Network",
-    href: "#"
+    href: "https://v0-university-alumni-website.vercel.app/alumni/network"
   }, {
     title: "Registration & Directory",
-    href: "#"
+    href: "https://v0-university-alumni-website.vercel.app/alumni/registration"
   }, {
     title: "Alumni Talks",
-    href: "#"
+    href: "https://v0-university-alumni-website.vercel.app/alumni/talks"
   }, {
     title: "Events & Reunions",
-    href: "#"
+    href: "https://v0-university-alumni-website.vercel.app/alumni/events"
   }];
   return <header className="w-full">
       {/* Secondary Navbar */}
