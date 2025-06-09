@@ -65,7 +65,7 @@ const Header = () => {
       title: "School of Engineering",
       href: "https://buddha-university-portal.lovable.app/academics/schools/engineering",
       departments: [
-        "Electronical Engineering",
+        "Electronical Engineering and blahh",
         "Mechanical Engineering",
         "Civil Engineering"
       ],
@@ -106,6 +106,8 @@ const Header = () => {
       ],
       href: "https://buddha-university-portal.lovable.app/academics/schools/humanities"
     },
+
+
     {
       title: "School of Buddhist Studies & Civilization",
       departments: [
